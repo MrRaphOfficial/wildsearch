@@ -1,0 +1,6 @@
+{
+  "name": "WildSearch",
+  "description": "A clean, minimalist wildlife encyclopedia search engine powered by Wikipedia with curated field photography and an accessible article reader.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

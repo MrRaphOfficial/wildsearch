@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WildSearch</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<div class="bg">
+
+<img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg">
+<img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg">
+<img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG">
+<img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg">
+
+</div>
+
+<header>
+
+<nav>
+<a href="#">Gmail</a>
+<a href="#">Images</a>
+</nav>
+
+</header>
+
+<section class="searchPage">
+
+<h1 class="logo">WildSearch</h1>
+
+<div class="searchbox">
+
+<input id="searchInput" placeholder="Search wildlife (lion, tiger, panda)">
+<button id="searchBtn">🔎</button>
+
+</div>
+
+</section>
+
+<section id="results" class="results"></section>
+
+<!-- FULL ARTICLE MODAL -->
+
+<div id="modal" class="modal">
+
+<div class="modalContent">
+
+<span id="closeModal">&times;</span>
+
+<img id="modalImg">
+
+<h2 id="modalTitle"></h2>
+
+<p id="modalText"></p>
+
+<a id="wikiLink" target="_blank">Read full article</a>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

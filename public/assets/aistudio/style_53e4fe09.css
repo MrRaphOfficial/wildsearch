@@ -1,0 +1,451 @@
+/* GLOBAL RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#000;
+color:white;
+min-height:100vh;
+position:relative;
+z-index:1;
+overflow-x:hidden;
+}
+
+/* ------------------------- */
+/* BACKGROUND SLIDESHOW */
+/* ------------------------- */
+
+.bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+overflow:hidden;
+}
+
+.bg img{
+
+position:absolute;
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+opacity:0;
+
+animation:slide 40s infinite;
+
+filter:brightness(.55);
+
+pointer-events:none;
+
+}
+
+/* SLIDE TIMING */
+
+.bg img:nth-child(1){animation-delay:0s;}
+.bg img:nth-child(2){animation-delay:10s;}
+.bg img:nth-child(3){animation-delay:20s;}
+.bg img:nth-child(4){animation-delay:30s;}
+
+/* FADE ANIMATION */
+
+@keyframes slide{
+
+0%{opacity:0;}
+5%{opacity:1;}
+25%{opacity:1;}
+30%{opacity:0;}
+100%{opacity:0;}
+
+}
+
+/* ------------------------- */
+/* NAVBAR */
+/* ------------------------- */
+
+nav{
+
+display:flex;
+justify-content:flex-end;
+
+gap:20px;
+
+padding:20px 40px;
+
+font-size:14px;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+opacity:.85;
+
+}
+
+nav a:hover{
+text-decoration:underline;
+opacity:1;
+}
+
+/* ------------------------- */
+/* SEARCH PAGE */
+/* ------------------------- */
+
+.searchPage{
+
+display:flex;
+flex-direction:column;
+
+align-items:center;
+
+margin-top:120px;
+
+text-align:center;
+
+}
+
+.logo{
+
+font-size:64px;
+font-weight:bold;
+
+letter-spacing:1px;
+
+margin-bottom:25px;
+
+text-shadow:
+0 5px 15px rgba(0,0,0,.6),
+0 0 25px rgba(255,255,255,.2);
+
+}
+
+/* SEARCH BOX */
+
+.searchbox{
+
+display:flex;
+
+background:rgba(255,255,255,.2);
+
+backdrop-filter:blur(14px);
+
+border-radius:40px;
+
+overflow:hidden;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.4);
+
+}
+
+.searchbox input{
+
+width:420px;
+
+max-width:70vw;
+
+padding:14px 18px;
+
+border:none;
+outline:none;
+
+background:transparent;
+
+color:white;
+
+font-size:17px;
+
+}
+
+.searchbox button{
+
+padding:14px 20px;
+
+border:none;
+
+background:rgba(0,0,0,.4);
+
+color:white;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.searchbox button:hover{
+
+background:rgba(0,0,0,.6);
+
+}
+
+/* ------------------------- */
+/* RESULTS GRID */
+/* ------------------------- */
+
+.results{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:30px;
+
+max-width:1100px;
+
+margin:80px auto;
+
+padding:20px;
+
+}
+
+/* WILDLIFE CARD */
+
+.card{
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(14px);
+
+border-radius:12px;
+
+overflow:hidden;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.5);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.6);
+
+}
+
+.card img{
+
+width:100%;
+height:220px;
+
+object-fit:cover;
+
+}
+
+/* CARD CONTENT */
+
+.cardContent{
+
+padding:20px;
+
+}
+
+.cardContent h2{
+
+margin-bottom:10px;
+
+font-size:22px;
+
+}
+
+.cardContent p{
+
+font-size:14px;
+
+line-height:1.6;
+
+margin-bottom:15px;
+
+opacity:.95;
+
+}
+
+/* READ MORE BUTTON */
+
+.card button{
+
+padding:9px 16px;
+
+border:none;
+
+background:#2c8f5a;
+
+color:white;
+
+border-radius:6px;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.card button:hover{
+
+background:#3fa36e;
+
+}
+
+/* ------------------------- */
+/* MODAL ARTICLE VIEW */
+/* ------------------------- */
+
+.modal{
+
+display:none;
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.85);
+
+justify-content:center;
+align-items:center;
+
+z-index:1000;
+
+padding:20px;
+
+}
+
+/* MODAL CONTENT */
+
+.modalContent{
+
+background:#111;
+
+max-width:720px;
+
+width:100%;
+
+padding:30px;
+
+border-radius:12px;
+
+overflow-y:auto;
+
+max-height:90vh;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.8);
+
+}
+
+/* CLOSE BUTTON */
+
+#closeModal{
+
+float:right;
+
+font-size:26px;
+
+cursor:pointer;
+
+opacity:.8;
+
+}
+
+#closeModal:hover{
+opacity:1;
+}
+
+/* MODAL IMAGE */
+
+.modalContent img{
+
+width:100%;
+
+border-radius:10px;
+
+margin-bottom:20px;
+
+}
+
+/* MODAL TITLE */
+
+#modalTitle{
+
+font-size:28px;
+
+margin-bottom:15px;
+
+}
+
+/* MODAL TEXT */
+
+#modalText{
+
+line-height:1.7;
+
+font-size:15px;
+
+opacity:.95;
+
+}
+
+/* WIKIPEDIA LINK */
+
+#wikiLink{
+
+display:inline-block;
+
+margin-top:20px;
+
+padding:10px 18px;
+
+background:#2c8f5a;
+
+border-radius:6px;
+
+text-decoration:none;
+
+color:white;
+
+transition:.2s;
+
+}
+
+#wikiLink:hover{
+
+background:#3fa36e;
+
+}
+
+/* ------------------------- */
+/* MOBILE RESPONSIVE */
+/* ------------------------- */
+
+@media(max-width:900px){
+
+.results{
+grid-template-columns:1fr;
+}
+
+.logo{
+font-size:46px;
+}
+
+.searchbox input{
+width:260px;
+}
+
+}
